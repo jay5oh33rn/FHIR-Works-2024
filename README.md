@@ -14,6 +14,9 @@ This repository consists of the following:
     2. Video link of our pitch (2 min)
     3. Basic code 
 
+THIS IS THE LINK TO THE VIDEO:
+
+https://youtu.be/Ef6gml_H9gA
 
 FHIR API
 The information being visualized in Aura Mind is being served from an FHIR API.
