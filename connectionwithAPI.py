@@ -21,6 +21,6 @@ def query_chatgpt(prompt, model="text-davinci-003", api_key="your_api_key_here")
 
 # Example usage
 api_key = "your_openai_api_key_here"
-prompt = "When is my next apppointment?"
-response = query_chatgpt(prompt, api_key=api_key)
-print(response)
+ex_prompt = "When is my next apppointment?"
+ex_response = query_chatgpt(prompt, api_key=api_key)
+
