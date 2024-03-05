@@ -37,13 +37,16 @@ def chat_stream_example(project_id: str, location: str) -> str:
 
     while True:
         prompt = input()
+        print()
         if prompt == '/':
             print("Goodbye!")
             break
         elif prompt == '':
+            print()
             print("Please enter your message")
         else:
             print(get_chat_response(chat, prompt))
+            print()
 
     # [END aiplatform_gemini_multiturn_chat]
     return
