@@ -1,0 +1,21 @@
+{
+    "resourceType": "Observation",
+    "id": "symptom-1",
+    "status": "preliminary",
+    "subject": {
+      "reference": "Patient/57100adf-a457-477b-a283-5bb0a4a4614b"
+    },
+    "valueString": "Feeling anxious and restless",
+    "valueTime": "2024-03-05T10:30:00Z"
+}
+
+{
+    "resourceType": "Observation",
+    "id": "symptom-2",
+    "status": "preliminary",
+    "subject": {
+      "reference": "Patient/f67a5682-c96a-4f56-b32a-c91731183f62"
+    },
+    "valueString": "Difficulty sleeping and concentrating",
+    "valueTime": "2024-03-05T10:30:00Z"
+  }
