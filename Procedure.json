@@ -1,6 +1,5 @@
 {
     "resourceType": "Procedure",
-    "id": "procedure-1",
     "status": "in-progress",
     "subject": {
       "reference": "Patient/57100adf-a457-477b-a283-5bb0a4a4614b"
@@ -13,7 +12,6 @@
 
 {
     "resourceType": "Procedure",
-    "id": "procedure-2",
     "status": "in-progress",
     "subject": {
       "reference": "Patient/f67a5682-c96a-4f56-b32a-c91731183f62"
