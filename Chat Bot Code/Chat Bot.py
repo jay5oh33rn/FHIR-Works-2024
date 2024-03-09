@@ -1,3 +1,42 @@
+import requests
+
+# FUNCTIONS TO HANDLE HTTP REQUESTS TO GET PATIENT ID
+
+url = 'https://auramind.com/patientinformation'
+
+def get_patient_id():
+
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # Successful request
+        data = response.json()
+        # Assuming the response contains patient information including ID
+        patient_id = data.get('patient_id')
+        print(f"Patient ID: {patient_id}")
+        return patient_id
+    else:
+        # Handle the error
+        print(f"Error: {response.status_code} - {response.text}")
+
+def get_patient_summary(patient_id: str):
+
+    response = requests.get(url)
+
+    params = {patient_id: 'patient_id'}  # Adjust parameters based on your API's requirements
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        # Successful request
+        data = response.json()
+        # Assuming the response contains patient information including ID
+        patient_summary = data.get('patien_summary')
+        print(f"Patient Summary: {patient_summary}")
+        return patient_summary
+    else:
+        # Handle the error
+        print(f"Error: {response.status_code} - {response.text}")
+
 # Copyright 2023 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +53,7 @@
 
 # Simple implementation of chat bot using Vertex API.
 
-def chat_stream_example(project_id: str, location: str) -> str:
+def chat_stream_example(project_id: str, location: str, patient_summary: str) -> str:
     # [START aiplatform_gemini_multiturn_chat_stream]
     import vertexai
     from vertexai.generative_models import GenerativeModel, ChatSession
@@ -30,8 +69,14 @@ def chat_stream_example(project_id: str, location: str) -> str:
             text_response.append(chunk.text)
         return "".join(text_response)
 
-    prompt = "You are a virtual AI therapist chatbot called AuraMind. Please introduce yourself as such. AuraMind will be able to determine self-harm and suicidal tendencies, alerting the patient’s PCN and sending the patient crisis helplines in the meantime."
+    prompt = "You are a virtual AI therapist chatbot called AuraMind. \
+              Please introduce yourself as such. AuraMind will be able to determine self-harm and suicidal tendencies, \
+              alerting the patient’s PCN and sending the patient crisis helplines in the meantime."
+    
+    
     print(get_chat_response(chat, prompt))
+
+    get_chat_response(chat, patient_summary) # Fine tuning step to tailor the response to specific patient summary
 
     print("Enter '/' to exit the chat with AuraMind")
 
@@ -52,4 +97,6 @@ def chat_stream_example(project_id: str, location: str) -> str:
     return
 
 # Project ID is unique in this instance of the cloud server.
-chat_stream_example("bamboo-insight-416315", "us-central1")
+patient_id = get_patient_id()
+patient_summary = get_patient_summary(patient_id)
+chat_stream_example("bamboo-insight-416315", "us-central1", patient_summary)
