@@ -1,12 +1,15 @@
 import requests
 
-# FUNCTIONS TO HANDLE HTTP REQUESTS TO GET PATIENT ID
+# FUNCTIONS TO HANDLE HTTP REQUESTS TO GET FHIR PATIENT DATA FROM FRONT END
 
-url = 'https://auramind.com/patientinformation'
+url = 'https://auramind.com/'
 
 def get_patient_id():
 
     response = requests.get(url)
+
+    params = {patient_id: 'patient_id'} 
+    response = requests.get(url, params=params)
 
     if response.status_code == 200:
         # Successful request
@@ -23,7 +26,7 @@ def get_patient_summary(patient_id: str):
 
     response = requests.get(url)
 
-    params = {patient_id: 'patient_id'}  # Adjust parameters based on your API's requirements
+    params = {patient_id: 'patient_id'} 
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
@@ -33,6 +36,24 @@ def get_patient_summary(patient_id: str):
         patient_summary = data.get('patien_summary')
         print(f"Patient Summary: {patient_summary}")
         return patient_summary
+    else:
+        # Handle the error
+        print(f"Error: {response.status_code} - {response.text}")
+
+def get_prompt():
+
+    prompt = requests.get(url)
+
+    params = {prompt: 'prompt'} 
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        # Successful request
+        data = response.json()
+        # Assuming the response contains patient information including ID
+        prompt = data.get('prompt')
+        print(f"Prompt: {prompt}")
+        return prompt
     else:
         # Handle the error
         print(f"Error: {response.status_code} - {response.text}")
@@ -67,13 +88,22 @@ def chat_stream_example(project_id: str, location: str, patient_summary: str) ->
         responses = chat.send_message(prompt, stream=True)
         for chunk in responses:
             text_response.append(chunk.text)
-        return "".join(text_response)
+        response_text = "".join(text_response)
+
+        # Send the response to the URL
+        response = requests.post(url, data={'response': response_text})
+
+        if response.status_code == 200:
+            print("Response successfully sent to the server.")
+        else:
+            print(f"Failed to send the response to the server. Status code: {response.status_code}")
+
+        return response_text
 
     prompt = "You are a virtual AI therapist chatbot called AuraMind. \
               Please introduce yourself as such. AuraMind will be able to determine self-harm and suicidal tendencies, \
               alerting the patient’s PCN and sending the patient crisis helplines in the meantime."
-    
-    
+     
     print(get_chat_response(chat, prompt))
 
     get_chat_response(chat, patient_summary) # Fine tuning step to tailor the response to specific patient summary
@@ -81,14 +111,13 @@ def chat_stream_example(project_id: str, location: str, patient_summary: str) ->
     print("Enter '/' to exit the chat with AuraMind")
 
     while True:
-        prompt = input()
+
+        # Get prompt from user from front end
+        get_prompt()
         print()
         if prompt == '/':
             print("Goodbye!")
             break
-        elif prompt == '':
-            print()
-            print("Please enter your message")
         else:
             print(get_chat_response(chat, prompt))
             print()
