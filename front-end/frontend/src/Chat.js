@@ -12,7 +12,7 @@ const Chat = ({ user }) => {
   useEffect(() => {
     const fetchResponses = async () => {
       try {
-        const response = await axios.post('http://localhost:8070/message', { userId: user.userId });
+        const response = await axios.post('http://192.168.0.1:8070/message', { userId: user.userId });
         if (response.data && response.data.newMessages) {
           setMessages((prevMessages) => [...prevMessages, ...response.data.newMessages]);
           scrollToBottom(); // Scroll to bottom when new messages are added
@@ -36,7 +36,7 @@ const Chat = ({ user }) => {
   const handleSendMessage = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8070/message', { text: message, userId: user.userId });
+      const response = await axios.post('http://192.168.0.1:8070/message', { text: message, userId: user.userId });
       setMessages((prevMessages) => [...prevMessages, { from: 'You', text: message }]);
       setMessage('');
       if (response.data && response.data.text) {

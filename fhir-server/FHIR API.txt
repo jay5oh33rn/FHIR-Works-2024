@@ -1,15 +1,15 @@
-URL: http://localhost:8090/fhir
+URL: http://192.168.0.1:8090/fhir
 
 Resource type: Patient
-URL: http://localhost:8090/fhir/Patient
+URL: http://192.168.0.1:8090/fhir/Patient
 - Stores personal information of the patient
 
 Resource type: Observation
-URL: http://localhost:8090/fhir/Observation
+URL: http://192.168.0.1:8090/fhir/Observation
 - Measurements and simple assertions made about the patient
 - Points to a Patient type by its id
 
 Resource type: Procedure
-URL: http://localhost:8090/fhir/Procedure
+URL: http://192.168.0.1:8090/fhir/Procedure
 - An action that is or was performed on or for the patient
 - Points to a Patient type by its id

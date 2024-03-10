@@ -24,7 +24,7 @@ const Login = ({ onLogin, user }) => {
     setError(''); // Reset error message
 
     try {
-      const response = await axios.post('http://localhost:8090/login', credentials);
+      const response = await axios.post('http://192.168.0.1:8090/login', credentials);
       const { userId } = response.data;
 
       if (userId !== 0) {
