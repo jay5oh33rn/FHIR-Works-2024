@@ -1,3 +1,5 @@
+> **Note**: The code currently uses a placeholder server address `192.168.0.1`. Before using this program, ensure to update this address to your actual server location.
+
 # Running Aura Mind
 
 ## Prerequisites
