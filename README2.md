@@ -1,10 +1,10 @@
 # Running Aura Mind
 
 ## Prerequisites
-- Docker installed on the machine.
-- Python environment set up.
+- Docker Engine 25.0 installed on the machine.
+- Python 3.12 environment set up.
 - Google Cloud account.
-- Node.js and npm installed for React application deployment.
+- Node.js 20.11.1 and npm (included) installed for React application deployment.
 
 ## Steps
 
@@ -27,8 +27,6 @@ This command starts the FHIR server and database.
    ```python
    chat_stream_example("PROJECT_ID", "us-central1")
    ```
-
-### 4. Run AuraMind
 - Execute `chatbot.py` to start interacting with the AI-driven chatbot: `python chatbot.py`
 
 ### 5. Deploy React User Interface
