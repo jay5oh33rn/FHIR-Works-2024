@@ -20,6 +20,7 @@ AuraMind is our project to help people with mental health care using the NHS app
 - Java 21 installed on the machine
 - Google Cloud account.
 - Node.js 20.11.1 and npm (included) installed for React application deployment.
+- PostgreSQL installed on the machine.
 
 ## Steps
 
@@ -61,4 +62,10 @@ To deploy the Java authentication code (`Login.java`) that interacts with the ch
     This serves the app on a local server.
   - For production deployment, use a platform like Netlify, Vercel, or GitHub Pages. Follow the platform-specific instructions to deploy the `build` folder. This often involves pushing the code to a GitHub repository and connecting the repository to the deployment platform.
 
-Ensure Docker is running, and the Python, Java and Node.js environments are properly set up before executing these steps.
+### 6. Database Setup and Data Import
+
+1. Ensure the PostgreSQL database service is running.
+2. Find SQL scripts in `Backend/database` for setting up the database.
+3. Connect to the database and run the setup script: `psql -h localhost -p 5432 -U admin -d hapi_r4 -f Backend/database/setup.sql`
+
+Ensure Docker is running, and the Python, Java, Node.js, and PostgreSQL environments are properly set up before executing these steps.
