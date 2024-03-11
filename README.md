@@ -12,14 +12,13 @@
 ## Steps
 
 ### 1. Set Up the FHIR Server
-1. Navigate to the directory containing `docker-compose.yml`.
-2. Run the command: `docker-compose up -d`
+1. Run the command: `docker-compose -f fhir-server/docker-compose.yml up -d`
 
 This command starts the FHIR server and database.
 
 ### 2. Import Mock FHIR Data
 1. Access the FHIR server at `Your_Server_Location`.
-2. Import `Observation.json`, `Patient.json`, and `Procedure.json` into the server to populate it with sample data.
+2. From the `fhir-server` directory, import `Observation.json`, `Patient.json`, and `Procedure.json` into the server to populate it with sample data.
 
 ### 3. Set Up the Chatbot
 1. Create a Google Cloud Account at [Google Cloud](https://cloud.google.com) and activate the account with payment details to access Vertex AI services.
@@ -30,13 +29,12 @@ This command starts the FHIR server and database.
    ```python
    chat_stream_example("PROJECT_ID", "us-central1")
    ```
-- Execute `chatbot.py` to start interacting with the AI-driven chatbot: `python chatbot.py`
+- Execute `chatbot.py` to start interacting with the AI-driven chatbot: `python gemini-api/chatbot.py`
 
 ### 4. Deploy Java Authentication Code
 To deploy the Java authentication code (`Login.java`) that interacts with the chatbot and FHIR server:
-1. Place `Login.java` in your project directory.
-2. Compile the Java code: `javac Login.java`
-3. Run the compiled Java application, replacing `myUsername` and `myPassword` with actual credentials: `java Login myUsername myPassword`
+1. Compile the Java code: `javac backend/Login.java`
+2. Run the compiled Java application, replacing `myUsername` and `myPassword` with actual credentials: `java -cp backend Login myUsername myPassword`
 
 ### 5. Deploy React User Interface
 1. Navigate to the React project directory.
