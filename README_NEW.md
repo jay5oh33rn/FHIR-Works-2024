@@ -51,4 +51,4 @@ To deploy the Java authentication code (`Login.java`) that interacts with the ch
     This serves the app on a local server.
   - For production deployment, use a platform like Netlify, Vercel, or GitHub Pages. Follow the platform-specific instructions to deploy the `build` folder. This often involves pushing the code to a GitHub repository and connecting the repository to the deployment platform.
 
-Ensure Docker is running, and the Python and Node.js environments are properly set up before executing these steps.
+Ensure Docker is running, and the Python, Java and Node.js environments are properly set up before executing these steps.
