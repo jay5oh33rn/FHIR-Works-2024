@@ -5,6 +5,7 @@
 ## Prerequisites
 - Docker Engine 25.0 installed on the machine.
 - Python 3.12 environment set up.
+- Java 21 installed on the machine
 - Google Cloud account.
 - Node.js 20.11.1 and npm (included) installed for React application deployment.
 
@@ -30,6 +31,12 @@ This command starts the FHIR server and database.
    chat_stream_example("PROJECT_ID", "us-central1")
    ```
 - Execute `chatbot.py` to start interacting with the AI-driven chatbot: `python chatbot.py`
+
+### 4. Deploy Java Authentication Code
+To deploy the Java authentication code (`Login.java`) that interacts with the chatbot and FHIR server:
+1. Place `Login.java` in your project directory.
+2. Compile the Java code: `javac Login.java`
+3. Run the compiled Java application, replacing `myUsername` and `myPassword` with actual credentials: `java Login myUsername myPassword`
 
 ### 5. Deploy React User Interface
 1. Navigate to the React project directory.
