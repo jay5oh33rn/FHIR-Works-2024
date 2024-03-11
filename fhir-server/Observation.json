@@ -25,3 +25,20 @@
   "valueString": "Experiencing symptoms of depression: persistent sadness, loss of interest in activities, difficulty sleeping"
 }
 
+{
+  "resourceType": "Observation",
+  "status": "preliminary",
+  "subject": {
+    "reference": "Patient/7ded1b67-71b2-41d5-874e-d16c25212a19"
+  },
+  "valueString": "Experiencing symptoms of anxiety: frequent worry, restlessness, difficulty concentrating"
+}
+
+{
+  "resourceType": "Observation",
+  "status": "preliminary",
+  "subject": {
+    "reference": "Patient/59d46166-57fb-4142-b5c9-79ceb937cc56"
+  },
+  "valueString": "Experiencing symptoms of PTSD: recurrent flashbacks, avoidance behavior, hypervigilance"
+}
