@@ -33,8 +33,8 @@ This command starts the FHIR server and database.
 
 ### 4. Deploy Java Authentication Code
 To deploy the Java authentication code (`Login.java`) that interacts with the chatbot and FHIR server:
-1. Compile the Java code: `javac backend/Login.java`
-2. Run the compiled Java application, replacing `myUsername` and `myPassword` with actual credentials: `java -cp backend Login myUsername myPassword`
+1. Compile the Java code: `javac Backend/Login.java`
+2. Run the compiled Java application, replacing `myUsername` and `myPassword` with actual credentials: `java -cp Backend Login myUsername myPassword`
 
 ### 5. Deploy React User Interface
 1. Navigate to the React project directory.
