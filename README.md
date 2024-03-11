@@ -1,6 +1,6 @@
-# Aura Mind Project Introduction
+# AuraMind Project Introduction
 
-Aura Mind is our project to help people with mental health care using the NHS app. It adds a new mental health section to the app. Users can manage appointments, talk directly to healthcare teams, and use an AI chatbot, Aura Mind, for quick advice. The chatbot checks on users and alerts healthcare teams if needed. Our goal is to make getting help easier and faster.
+AuraMind is our project to help people with mental health care using the NHS app. It adds a new mental health section to the app. Users can manage appointments, talk directly to healthcare teams, and use an AI chatbot, AuraMind, for quick advice. The chatbot checks on users and alerts healthcare teams if needed. Our goal is to make getting help easier and faster.
 
 **Team Members:**
 - Simran Goel (simran.goel.23@ucl.ac.uk)
@@ -10,7 +10,7 @@ Aura Mind is our project to help people with mental health care using the NHS ap
 - Felicia Ong (felicia.hui.23@ucl.ac.uk)
 - Joshua Soh (soh.soh.23@ucl.ac.uk)
 
-# Running Aura Mind
+# Running AuraMind
 
 > **Note**: The code currently uses a placeholder server address `192.168.0.1`. Before executing these codes, ensure to update this address to your actual server location.
 
