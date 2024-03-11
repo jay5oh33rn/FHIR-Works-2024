@@ -23,3 +23,42 @@
     "gender": "female",
     "birthDate": "1985-05-15"
 }
+
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "family": "Johnson",
+      "given": ["Sarah"]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1992-05-20"
+}
+
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "family": "Garcia",
+      "given": ["Juan"]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1975-09-10"
+}
+
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "family": "Wang",
+      "given": ["Li"]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1988-03-25"
+}
