@@ -9,7 +9,7 @@ public class Login{
     // Simulate sending HTTP POST request for authentication
     public static void sendPostRequest(String username, String password) {
         try {
-            URL url = new URL("http://localhost:8090/login");
+            URL url = new URL("192.168.0.1");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             // Set method to POST
