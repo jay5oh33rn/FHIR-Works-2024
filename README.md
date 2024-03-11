@@ -1,6 +1,18 @@
-> **Note**: The code currently uses a placeholder server address `192.168.0.1`. Before executing these codes, ensure to update this address to your actual server location.
+# Aura Mind Project Introduction
+
+Aura Mind is our project to help people with mental health care using the NHS app. It adds a new part to the app for mental health. Users can manage appointments, talk directly to health care teams, and use an AI chatbot, Aura Mind, for quick advice. The chatbot checks on users and alerts health teams if needed. Our goal is to make getting help easier and faster.
+
+**Team Members:**
+- Simran Goel (simran.goel.23@ucl.ac.uk)
+- Aiden Li (yiliu.li.23@ucl.ac.uk)
+- Guangqian Ma (guangqian.ma.23@ucl.ac.uk)
+- Xinyi Wu (xinyi.xinyi.23@ucl.ac.uk)
+- Felicia Ong (felicia.hui.23@ucl.ac.uk)
+- Joshua Soh (soh.soh.23@ucl.ac.uk)
 
 # Running Aura Mind
+
+> **Note**: The code currently uses a placeholder server address `192.168.0.1`. Before executing these codes, ensure to update this address to your actual server location.
 
 ## Prerequisites
 - Docker Engine 25.0 installed on the machine.
